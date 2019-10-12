@@ -1,0 +1,351 @@
+# ===== PROBLEM1 =====
+# Exercise 1 - Introduction - Say "Hello, World!" With Python
+# Write your code on the next line. 
+x = "Hello, World!"
+print(x)
+
+# Exercise 2 - Introduction - Python If-Else
+#!/bin/python3
+
+import sys
+n = int(input().strip())
+if n%2 == 1:
+    print("Weird")
+else:
+    if n >= 2 and n <= 5:
+        print("Not Weird")
+    elif n >= 6 and n <= 20:
+        print("Weird")
+    elif n > 20:
+        print("Not Weird")
+
+# Exercise 3 - Introduction - Arithmetic Operators
+a = int(input())
+b = int(input())
+print(a+b)
+print(a-b)
+print(a*b)
+
+# Exercise 4 - Introduction - Python: Division
+a = int(input())
+b = int(input())
+print(a//b)
+print(a/b)
+
+# Exercise 5 - Introduction - Loops
+n = int(input())
+for i in range (n):
+    print(i**2)
+
+# Exercise 6 - Introduction - Write a function
+def is_leap(year):
+    leap = False
+    
+    # Write your logic here
+    if year%4 == 0:
+        leap = True
+        if year%100 == 0:
+            if year%400 == 0:
+                leap = True
+            else:
+                leap = False
+    return leap
+
+# Exercise 7 - Introduction - Print Function
+N = int(input())
+for i in range (1,N+1):
+    print(i, end="")
+
+# Exercise 8 - Basic data types - List Comprehensions
+X,Y,Z,N = [int(input()) for i in range(4)]
+print([[a,b,c] for a in range(X+1) for b in range(Y+1) for c in range(Z+1) if a+b+c !=N])
+
+# Exercise 9 - Basic data types - Find the Runner-Up Score!
+N,H = int(input()), input()
+lst = H.split()
+for i in range(0,N):
+    lst[i] = int(lst[i])
+lst = sorted(set(lst))
+print(lst[-2])
+
+# Exercise 10 - Basic data types - Nested Lists
+marks = []
+students = int(input())
+for i in range(students):
+    marks.append([input(), float(input())])
+marks = sorted(marks)
+highest = sorted(set([mark for name, mark in marks]))[1]
+for i in range(students):
+        if(marks[i][1]==highest):
+            print(marks[i][0])
+
+# Exercise 11 - Basic data types - Finding the percentage
+h = int(input())
+dictionery = {}
+for row in range (h):
+    marks = input()
+    subjects = marks.split()
+    dictionery[subjects[0]] = [subjects[1], subjects[2], subjects[3]]
+name = input()
+avg = (float(dictionery[name][0]) + float(dictionery[name][1]) + float(dictionery[name][2]))/3
+print("%.2f" %avg)
+
+# Exercise 12 - Basic data types - Lists
+lst = []
+n = input()
+for i in range(int(n)):
+    st = input().split()
+    if len(st) == 3:
+        eval("lst."+st[0]+"("+st[1]+","+st[2]+")")
+    elif len(st) == 2:
+        eval("lst."+st[0]+"("+st[1]+")")
+    elif st[0] == "print":
+        print(lst)
+    else:
+        eval ("lst."+st[0]+"()")
+
+
+# Exercise 13 - Basic data types - Tuples
+h = input()
+i = input()
+inp = i.split()
+for i in range(0,int(h)):
+    inp[i] = int(inp[i])
+tup = tuple(inp)
+print (hash(tup))
+
+# Exercise 14 - Strings - sWAP cASE
+S= input()
+l= list(S)
+for i in range (len(l)):
+    if(l[i].isupper()):
+        l[i] = l[i].lower()
+    else:
+        l[i] = l[i].upper()
+S = ''.join(l)
+print(S)
+
+
+
+# Exercise 15 - Strings - String Split and Join
+s = input()
+p = s.split()
+j = "-".join(p)
+print(j)
+
+# Exercise 16 - Strings - What's Your Name?
+fname = input()
+lname = input()
+print("Hello",fname,lname+"! You just delved into python.")
+
+# Exercise 17 - Strings - Mutations
+s = input()
+l = input()
+d = l.split()
+i = int(d[0])
+c = d[1]
+s = s[:i]+c+s[(i+1):]
+print(s)
+
+
+
+# Exercise 18 - Strings - Find a string
+s = input()
+ss = input()
+found = 1
+ind = 0
+occurences = 0
+while(found == 1):
+    for i in range(len(s)):
+        if(s.find(ss,ind) < 0):
+            found = 0
+        else:
+            occurences+=1
+            ind = s.find(ss,ind) + 1
+print(occurences)
+
+# Exercise 19 - Strings - String Validators
+
+
+# Exercise 20 - Strings - Text Alignment
+
+
+# Exercise 21 - Strings - Text Wrap
+import textwrap
+S = input()
+w = int(input())
+print (textwrap.fill(S,w))
+
+# Exercise 22 - Strings - Designer Door Mat
+N, M = map(int,input().split()) # More than 6 lines of code will result in 0 score. Blank lines are not counted.
+for i in range(1,N,2): 
+    print ((i*".|.").center(M,"-"))
+print ("WELCOME".center(M,'-'))
+for i in range(N-2,-1,-2): 
+    print ((i*".|.").center(M,"-"))
+
+
+# Exercise 23 - Strings - String Formatting
+
+
+# Exercise 24 - Strings - Alphabet Rangoli
+
+
+# Exercise 25 - Strings - Capitalize!
+print(" ".join((s.capitalize() for s in input().strip().split(" "))))
+
+# Exercise 26 - Strings - The Minion Game
+
+
+# Exercise 27 - Strings - Merge the Tools!
+
+
+# Exercise 28 - Sets - Introduction to Sets
+input()
+var = set(map(int, input().split(' ')))
+print (sum(var)/len(var))
+
+# Exercise 29 - Sets - No Idea!
+n,m=input().split()
+arr = input().split()
+
+A= set(input().split())
+B=set(input().split())
+
+print(sum([(i in A)-(i in B) for i in arr]))
+
+
+# Exercise 30 - Sets - Symmetric Difference
+
+
+# Exercise 31 - Sets - Set .add()
+s = set()
+for _ in range(int(input())):
+    s.add(input())
+print(len(s))
+
+# Exercise 32 - Sets - Set .discard(), .remove() & .pop()
+n = int(input())
+s = set(map(int, input().split())) 
+for i in range(int(input())):
+    eval('s.{0}({1})'.format(*input().split()+['']))
+
+print(sum(s))
+
+# Exercise 33 - Sets - Set .union() Operation
+_, a = input(), set(input().split())
+_, b = input(), set(input().split())
+print(len(a.union(b)))
+
+# Exercise 34 - Sets - Set .intersection() Operation
+s1 = int(input())
+sl1 = set(map(int,input().split()))
+s2 = int(input())
+sl2 = set(map(int,input().split()))
+print (len(sl1.intersection(sl2)))
+
+# Exercise 35 - Sets - Set .difference() Operation
+_, a = input(), set(input().split())
+_, b = input(), set(input().split())
+print(len(a.difference(b)))
+
+# Exercise 36 - Sets - Set .symmetric_difference() Operation
+_, a = input(), set(input().split())
+_, b = input(), set(input().split())
+print(len(a.symmetric_difference(b)))
+
+# Exercise 37 - Sets - Set Mutations
+
+
+# Exercise 38 - Sets - The Captain's Room
+k,arr = int(input()),list(map(int, input().split()))
+
+myset = set(arr)
+
+print(((sum(myset)*k)-(sum(arr)))//(k-1))
+
+# Exercise 39 - Sets - Check Subset
+
+
+# Exercise 40 - Sets - Check Strict Superset
+a = set(input().split())
+print(all(a > set(input().split()) for _ in range(int(input()))))
+
+
+# Exercise 41 - Collections - collections.Counter()
+from collections import Counter
+_, stock = input(), Counter(list(map(int,input().split())))
+money = 0
+for size, cost in [map(int, input().split()) 
+                      for _ in range(int(input()))]:
+    if stock[size]>0:
+        stock[size]-=1
+        money+=cost
+print(money)
+
+# Exercise 42 - Collections - DefaultDict Tutorial
+
+
+# Exercise 43 - Collections - Collections.namedtuple()
+
+
+# Exercise 44 - Collections - Collections.OrderedDict()
+
+
+# Exercise 45 - Collections - Word Order
+
+
+# Exercise 46 - Collections - Collections.deque()
+from collections import deque
+d = deque()
+for _ in range(int(input())):
+    command, *args = input().split()
+    getattr(d, command)(*map(int, args))
+print(*d)
+
+# Exercise 47 - Collections - Company Logo
+from itertools import groupby
+print(*[char+" "+str(num) for num,char in sorted(sorted([(len(list(v)),k) for k, v in groupby(sorted(input()))],key=lambda x: x[1]),key=lambda x: x[0],reverse=True)][:3], sep='\n')
+
+# Exercise 48 - Collections - Piling Up!
+from collections import deque
+for _ in (range(int(input()))):
+    input()
+    side_lengths = deque(map(int, input().strip().split()))
+    result = "Yes"
+    if max(side_lengths) not in (side_lengths[0], side_lengths[-1]):
+        result = "No"
+    print(result)
+
+# Exercise 49 - Date time - Calendar Module
+import calendar
+#calendar.Calendar(calendar.SUNDAY)
+user_input = input().split()
+month = int(user_input[0])
+day = int(user_input[1])
+year = int(user_input[2])
+c = calendar.weekday(year, month, day)
+
+if c == 0:
+    print("MONDAY")
+elif c == 1:
+    print("TUESDAY")
+elif c == 2:
+    print("WEDNESDAY")
+elif c==3:
+    print("THURSDAY")
+elif c==4:
+    print("FRIDAY")
+elif c== 5:
+    print("SATURDAY")
+elif c==6:
+    print("SUNDAY")
+
+# Exercise 50 - Date time - Time Delta
+from datetime import datetime as dt
+
+
+fmt = '%a %d %b %Y %H:%M:%S %z'
+for i in range(int(input())):
+    print(int(abs((dt.strptime(input(), fmt) - 
+                   dt.strptime(input(), fmt)).total_seconds())))
